@@ -9,7 +9,6 @@ if __name__ == "__main__":
         b = int(sys.argv[3])
         ops = ["+", "-", "*", "/"]
         if op in ops:
-            #r = 0
             if op == "+":
                 r = add(a, b)
             elif op == "-":
