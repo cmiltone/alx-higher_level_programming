@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 {
 	int start = 0, end, i = 0, integers[100];
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	while (*head != NULL)
 	{
