@@ -2,7 +2,7 @@
 def best_score(a_dictionary):
     if a_dictionary == None:
         return None
-    score = -10000
+    score = -100000000000
     key = ""
     for k in a_dictionary:
         if score < a_dictionary[k]:
