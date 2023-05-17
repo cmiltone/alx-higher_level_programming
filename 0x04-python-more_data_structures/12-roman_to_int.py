@@ -20,10 +20,10 @@ def roman_to_int(roman_string):
     i = 0
     num = 0
     while i < len(roman_string):
-        if i+1<len(roman_string) and roman_string[i:i+2] in r:
-            num+=r[roman_string[i:i+2]]
-            i+=2
+        if i + 1 < len(roman_string) and roman_string[i:i + 2] in r:
+            num += r[roman_string[i:i + 2]]
+            i += 2
         else:
-            num+=r[roman_string[i]]
-            i+=1
+            num += r[roman_string[i]]
+            i += 1
     return num
