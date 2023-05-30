@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""module for linked list"""
+
+
 class Node:
     """Singly linked list node"""
-
-
     def __init__(self, data, next_node=None):
         """initialize Node"""
         self.__data = data
@@ -28,7 +29,7 @@ class Node:
     @next_node.setter
     def next_node(self, next_node):
         """next node setter"""
-        if next_node != None and not isinstance(next_node, Node):
+        if next_node is not None and not isinstance(next_node, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = next_node
 
@@ -50,12 +51,12 @@ class SinglyLinkedList:
         else:
             list_ = self.__head
 
-            while list_ != None:
-                if list_.data != None:
+            while list_ is not None:
+                if list_.data is not None:
                     if list_.data < value:
                         break
                 list_ = list_.next_node
-                #print("loo {}".format(list_.data))
+                # print("loo {}".format(list_.data))
 
             node = Node(None)
 
