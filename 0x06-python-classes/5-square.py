@@ -4,7 +4,7 @@
 
 class Square:
     """A Square Class."""
-    __size = 10
+    __size = 0
     """Set the class size attribute"""
     def __init__(self, size=0):
         if not isinstance(size, int):
