@@ -34,11 +34,11 @@ class Square:
     def __ne__(self, other):
         """Checks for not equal"""
         return self.area() != other.area()
-    
+
     def __le__(self, other):
         """Checks for less than or equal to"""
         return self.area() <= other.area()
-    
+
     def __lt__(self, other):
         """Checks for less than"""
         return self.area() < other.area()
