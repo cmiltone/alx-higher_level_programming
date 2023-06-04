@@ -27,7 +27,8 @@ def matrix_mul(m_a, m_b):
         if a != 0 and y != len(m_a[a]):
             raise TypeError("each row of m_a must be of the same size")
         for c in range(0, len(m_a[a])):
-            if not isinstance(m_a[a][c], int) and not isinstance(m_a[a][c], float):
+            if not isinstance(m_a[a][c], int) and
+            not isinstance(m_a[a][c], float):
                 raise ValueError("m_a should contain only integers or floats")
         i += 1
 
@@ -35,10 +36,11 @@ def matrix_mul(m_a, m_b):
         if b != 0 and z != len(m_b[b]):
             raise TypeError("each row of m_b must be of the same size")
         for d in range(0, len(m_b[b])):
-            if not isinstance(m_b[b][d], int) and not isinstance(m_b[b][d], float):
+            if not isinstance(m_b[b][d], int) and
+            not isinstance(m_b[b][d], float):
                 raise ValueError("m_b should contain only integers or floats")
         j += 1
-    
+
     new_matrix = []
     m = 0
     n = 0
