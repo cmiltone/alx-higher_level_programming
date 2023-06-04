@@ -19,9 +19,10 @@ def matrix_divided(matrix, div):
         new_matrix.append([])
         # new_matrix[i] = []
         for j in range(0, len(matrix[i])):
-            if not isinstance(matrix[i][j], int) and
-            not isinstance(matrix[i][j], float):
-            s1 = "matrix must be a matrix (list of lists) of integers/floats"
+            isint = isinstance(matrix[i][j], int)
+            isfloat = isinstance(matrix[i][j], float)
+            if not isint and not isfloat:
+                s1 = "matrix must be a matrix (list of lists) of integers/floats"
                 raise TypeError(s1)
             new_matrix[i].append(round(matrix[i][j] / div, 2))
         k = len(matrix[i])
