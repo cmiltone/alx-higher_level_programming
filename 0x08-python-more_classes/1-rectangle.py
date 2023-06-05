@@ -6,6 +6,7 @@ class Rectangle:
     """ a rectangle class"""
     __height = None
     __width = None
+
     def __init__(self, width=0, height=0):
         """initialize rectangle"""
         self.__width = width
