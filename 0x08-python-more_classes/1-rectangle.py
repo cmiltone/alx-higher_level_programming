@@ -8,6 +8,7 @@ class Rectangle:
         """initialize rectangle"""
         self.__width = width
         self.__height = height
+
     @property
     def width(self):
         """getter for width"""
