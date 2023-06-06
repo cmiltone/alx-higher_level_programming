@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-def copy_list(l):
-    new_list = []
-    for k in l:
-        new_list.append(k)
-    return new_list
+def copy_list(a):
+    return a[:] if (isinstance(a, tuple) or isinstance(a, list) or isinstance(a, str)) else a
