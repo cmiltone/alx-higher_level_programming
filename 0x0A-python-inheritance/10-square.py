@@ -15,4 +15,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """returns printable string for rectangle"""
-        return "[Rectangle] {}/{}".format(self.__size__, self.__size__)
+        return "[Square] {}/{}".format(self.__size__, self.__size__)
