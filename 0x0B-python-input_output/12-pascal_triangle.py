@@ -12,6 +12,6 @@ def pascal_triangle(n):
         t = []
         for j in range(1, i + 1):
             t.append(k)
-            k = k * (i - j) // j # binomial coefficient
+            k = k * (i - j) // j  # binomial coefficient
         triangle.append(t)
     return triangle
