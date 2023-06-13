@@ -21,9 +21,6 @@ def add_item():
         data = args
     save_to_json_file(data, filename)
 
-    data = load_from_file(filename)
-    print(data)
-
 
 if __name__ == "__main__":
     add_item()
