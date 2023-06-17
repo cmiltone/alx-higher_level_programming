@@ -3,7 +3,7 @@
 module for base class
 """
 import json
-
+from io import StringIO
 
 class Base:
     """sbase class"""
@@ -31,3 +31,9 @@ class Base:
             filename = item.__class__.__name__ + ".json"
             with open(filename, "w+") as f:
                 f.write(cls.to_json_string([item.to_dictionary()]))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns an object represented by a JSON string"""
+        io = StringIO(json_string)
+        return json.load(io)
