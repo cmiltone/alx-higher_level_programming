@@ -44,3 +44,8 @@ class TestSqaureClass(unittest.TestCase):
         s = Square(4, 6, 2, 1)
         s.update(x=1, size=2, y=3)
         self.assertEqual("[Square] (1) 1/3 - 2", s.__str__())
+
+    def test_to_dictionary_method_correctness(self):
+        s = Square(10, 2, 1, 1)
+        obj = {'id': 1, 'size': 10, 'x': 2, 'y': 1}
+        self.assertEqual(obj, s.to_dictionary())
