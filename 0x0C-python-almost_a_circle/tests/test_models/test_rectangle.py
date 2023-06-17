@@ -24,41 +24,49 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(5, b5.id)
 
     def test_for_invalid_width_value(self):
+        """Test for validity of width value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(-1, 2)
         self.assertTrue("width must be >= 0" == str(context.exception))
 
     def test_for_invalid_width_type(self):
+        """Test for validity of width type check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle("10", 2)
         self.assertTrue("width must be an integer" == str(context.exception))
 
     def test_for_invalid_height_value(self):
+        """Test for validity of height value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(1, -2)
         self.assertTrue("height must be >= 0" == str(context.exception))
 
     def test_for_invalid_height_type(self):
+        """Test for validity of height type check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(10, "2")
         self.assertTrue("height must be an integer" == str(context.exception))
 
     def test_for_invalid_x_value(self):
+        """Test for validity of x value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(1, 2, -1)
         self.assertTrue("x must be >= 0" == str(context.exception))
     
     def test_for_invalid_x_type(self):
+        """Test for validity of x type check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(10, 2, "2")
         self.assertTrue("x must be an integer" == str(context.exception))
     
     def test_for_invalid_y_value(self):
+        """Test for validity of y value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(1, 2, 4, -1)
         self.assertTrue("y must be >= 0" == str(context.exception))
     
     def test_for_invalid_y_type(self):
+        """Test for validity of y type check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(10, 2, 1, "2")
         self.assertTrue("y must be an integer" == str(context.exception))
