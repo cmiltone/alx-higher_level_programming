@@ -89,3 +89,8 @@ class TestRectangleClass(unittest.TestCase):
         r = Rectangle(4, 6, 2, 1, 12)
         r.update(89, 2, 3, 4, 5)
         self.assertEqual("[Rectangle] (89) 4/5 - 2/3", r.__str__())
+
+    def test_update_method_correctness_with_kwars(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        r.update(x=1, height=2, y=3, width=4)
+        self.assertEqual("[Rectangle] (12) 1/3 - 4/2", r.__str__())
