@@ -37,3 +37,14 @@ class Base:
         """returns an object represented by a JSON string"""
         io = StringIO(json_string)
         return json.load(io)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """eturns an instance with all attributes already set"""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                _class = cls(1, 1)
+            else:
+                _class = cls(1)
+            _class.update(**dictionary)
+            return _class
