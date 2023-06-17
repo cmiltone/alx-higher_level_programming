@@ -81,10 +81,16 @@ class Rectangle(Base):
         s = ""
         if self.height == 0 or self.width == 0:
             return s
-        for i in range(self.height):
-            for j in range(self.width):
-                s = s + "#"
-            if i < self.height - 1:
+        for i in range(self.height + self.y):
+            if i < self.y:
+                s += ""
+            else:
+                for j in range(self.width + self.x):
+                    if j < self.x:
+                        s = s + " "
+                    else:
+                        s = s + "#"
+            if i < (self.height + self.y) - 1:
                 s = s + "\n"
         print("{}".format(s))
 
