@@ -30,5 +30,5 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(1, b.id)
         b4 = Base(13)
         self.assertEqual(13, b4.id)
-        b4 = Base()
+        b5 = Base()
         self.assertEqual(2, b5.id)
