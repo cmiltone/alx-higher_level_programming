@@ -34,3 +34,13 @@ class TestSqaureClass(unittest.TestCase):
             s = Square(10)
             s.size = "10"
         self.assertTrue("width must be an integer" == str(context.exception))
+
+    def test_update_method_correctness(self):
+        s = Square(4, 6, 2, 1)
+        s.update(89, 2, 3, 4)
+        self.assertEqual("[Square] (89) 3/4 - 2", s.__str__())
+
+    def test_update_method_correctness_with_kwars(self):
+        s = Square(4, 6, 2, 1)
+        s.update(x=1, size=2, y=3)
+        self.assertEqual("[Square] (1) 1/3 - 2", s.__str__())
