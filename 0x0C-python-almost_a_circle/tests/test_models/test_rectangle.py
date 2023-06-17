@@ -84,3 +84,8 @@ class TestRectangleClass(unittest.TestCase):
     def test_str_method_correctness(self):
         r = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual("[Rectangle] (12) 2/1 - 4/6", r.__str__())
+
+    def test_update_method_correctness(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        r.update(89, 2, 3, 4, 5)
+        self.assertEqual("[Rectangle] (89) 4/5 - 2/3", r.__str__())
