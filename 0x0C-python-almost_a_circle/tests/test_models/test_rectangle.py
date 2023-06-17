@@ -75,3 +75,8 @@ class TestRectangleClass(unittest.TestCase):
     def test_area_method_correctness(self):
         r = Rectangle(10, 5)
         self.assertEqual(10 * 5, r.area())
+
+    # def test_display_method_correctness(self):
+    #     r = Rectangle(4, 6)
+    #     s = "####\n####\n####\n####\n####\n####"
+    #     self.assertEqual(s, r.display())
