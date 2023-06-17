@@ -9,9 +9,10 @@ from models.rectangle import Rectangle
 
 class TestRectangleClass(unittest.TestCase):
     """Test Cases for Rectangle class"""
+
     def test_for_correct_assignment(self):
         """Test for correct assignment"""
-        b = Rectangle(10, 2)
+        b = Rectangle(10, 2, 1, 2, 3)
         self.assertEqual(3, b.id)
 
     def test_for_correct_increment(self):
@@ -70,3 +71,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             r = Rectangle(10, 2, 1, "2")
         self.assertTrue("y must be an integer" == str(context.exception))
+
+    def test_area_method_correctness(self):
+        r = Rectangle(10, 5)
+        self.assertEqual(10 * 5, r.area())
