@@ -94,3 +94,8 @@ class TestRectangleClass(unittest.TestCase):
         r = Rectangle(4, 6, 2, 1, 12)
         r.update(x=1, height=2, y=3, width=4)
         self.assertEqual("[Rectangle] (12) 1/3 - 4/2", r.__str__())
+
+    def test_to_dictionary_method_correctness(self):
+        r = Rectangle(10, 2, 1, 9, 1)
+        obj = {'id': 1, '_Rectangle__width': 10, '_Rectangle__height': 2, '_Rectangle__x': 1, '_Rectangle__y': 9}
+        self.assertEqual(obj, r.to_dictionary())
