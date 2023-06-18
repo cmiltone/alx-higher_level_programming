@@ -4,6 +4,7 @@ module for base class
 """
 import json
 from io import StringIO
+import csv
 
 class Base:
     """sbase class"""
@@ -54,8 +55,49 @@ class Base:
         """returns a list of instances"""
         l = []
         filename = cls.__name__ + ".json"
-        with open(filename, encoding="utf-8") as f:
-            string = f.read()
-            for obj in cls.from_json_string(string):
-                l.append(cls.create(**obj))
-        return l
+        try:
+            with open(filename, encoding="utf-8") as f:
+                string = f.read()
+                for obj in cls.from_json_string(string):
+                    l.append(cls.create(**obj))
+            return l
+        except IOError:
+            return []
+    
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """saves to csv"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+                return
+            fields = []
+            if cls.__name__ == "Square":
+                fields = ["id","size","x","y"]
+            elif cls.__name__ == "Rectangle":
+                fields = ["id", "width", "height", "x", "y"]
+            w = csv.DictWriter(f, fieldnames=fields)
+            for obj in list_objs:
+                w.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """loads from csv file"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as f:
+                if cls.__name__ == "Square":
+                    fields = ["id", "size", "x", "y"]
+                else:
+                    fields = ["id", "width", "height", "x", "y"]
+                items = csv.DictReader(f, fieldnames=fields)
+                items = [dict([i, int(j)] for i, j in item.items())
+                              for item in items]
+                l = []
+                for d in items:
+                    l.append(cls.create(**d))
+                return l
+        except IOError:
+            return []
+
