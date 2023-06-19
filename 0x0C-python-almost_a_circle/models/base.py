@@ -5,7 +5,6 @@ module for base class
 import json
 from io import StringIO
 import csv
-import turtle
 
 
 class Base:
@@ -30,7 +29,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
-        if list_objs is None or len(list_objs) <= 0:
+        if list_objs is None:
             filename = cls.__name__ + ".json"
             with open(filename, "w+") as f:
                 f.write("[]")
@@ -44,10 +43,10 @@ class Base:
                 sqrs.append(item.to_dictionary())
         if len(rects) > 0:
             with open("Rectangle.json", "w+") as f:
-                f.write(cls.to_json_string(rects))
+                f.write(Base.to_json_string(rects))
         if len(sqrs) > 0:
             with open("Square.json", "w+") as f:
-                f.write(cls.to_json_string(sqrs))
+                f.write(Base.to_json_string(sqrs))
 
     @staticmethod
     def from_json_string(json_string):
@@ -118,39 +117,3 @@ class Base:
                 return _list
         except IOError:
             return []
-
-    @staticmethod
-    def draw(list_rectangles, list_squares):
-        """ draws the shapes"""
-        t = turtle.Turtle()
-        t.screen.bgcolor("#02bbee")
-        t.pensize(3)
-        t.shape("turtle")
-
-        t.color("#ffffff")
-        for rect in list_rectangles:
-            t.showturtle()
-            t.up()
-            t.goto(rect.x, rect.y)
-            t.down()
-            for i in range(2):
-                t.forward(rect.width)
-                t.left(90)
-                t.forward(rect.height)
-                t.left(90)
-            t.hideturtle()
-
-        t.color("#0224ee")
-        for sq in list_squares:
-            t.showturtle()
-            t.up()
-            t.goto(sq.x, sq.y)
-            t.down()
-            for i in range(2):
-                t.forward(sq.width)
-                t.left(90)
-                t.forward(sq.height)
-                t.left(90)
-            t.hideturtle()
-
-        turtle.exitonclick()
