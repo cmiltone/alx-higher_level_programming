@@ -95,7 +95,7 @@ class Base:
                     fields = ["id", "width", "height", "x", "y"]
                 items = csv.DictReader(f, fieldnames=fields)
                 items = [dict([i, int(j)] for i, j in item.items())
-                        for item in items]
+                         for item in items]
                 _list = []
                 for d in items:
                     _list.append(cls.create(**d))
