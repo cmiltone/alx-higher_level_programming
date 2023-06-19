@@ -23,7 +23,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(13, b4.id)
         b5 = Base()
         self.assertEqual(2, b5.id)
-    
+
     def test_to_json_string_method(self):
         b = Base(4)
         s = b.to_json_string({"id": 2})

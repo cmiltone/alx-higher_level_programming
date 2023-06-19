@@ -53,19 +53,19 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             r = Rectangle(1, 2, -1)
         self.assertTrue("x must be >= 0" == str(context.exception))
-    
+
     def test_for_invalid_x_type(self):
         """Test for validity of x type check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(10, 2, "2")
         self.assertTrue("x must be an integer" == str(context.exception))
-    
+
     def test_for_invalid_y_value(self):
         """Test for validity of y value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(1, 2, 4, -1)
         self.assertTrue("y must be >= 0" == str(context.exception))
-    
+
     def test_for_invalid_y_type(self):
         """Test for validity of y type check"""
         with self.assertRaises(Exception) as context:

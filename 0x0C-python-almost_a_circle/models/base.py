@@ -7,6 +7,7 @@ from io import StringIO
 import csv
 import turtle
 
+
 class Base:
     """sbase class"""
     __nb_objects = 0
@@ -54,17 +55,17 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        l = []
+        _list = []
         filename = cls.__name__ + ".json"
         try:
             with open(filename, encoding="utf-8") as f:
                 string = f.read()
                 for obj in cls.from_json_string(string):
-                    l.append(cls.create(**obj))
-            return l
+                    _list.append(cls.create(**obj))
+            return _list
         except IOError:
             return []
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """saves to csv"""
@@ -75,7 +76,7 @@ class Base:
                 return
             fields = []
             if cls.__name__ == "Square":
-                fields = ["id","size","x","y"]
+                fields = ["id", "size", "x", "y"]
             elif cls.__name__ == "Rectangle":
                 fields = ["id", "width", "height", "x", "y"]
             w = csv.DictWriter(f, fieldnames=fields)
@@ -94,11 +95,11 @@ class Base:
                     fields = ["id", "width", "height", "x", "y"]
                 items = csv.DictReader(f, fieldnames=fields)
                 items = [dict([i, int(j)] for i, j in item.items())
-                              for item in items]
-                l = []
+                        for item in items]
+                _list = []
                 for d in items:
-                    l.append(cls.create(**d))
-                return l
+                    _list.append(cls.create(**d))
+                return _list
         except IOError:
             return []
 
