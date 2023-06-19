@@ -26,7 +26,7 @@ class TestSqaureClass(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             s = Square(1, 2, 4)
             s.size = -1
-        self.assertTrue("width must be >= 0" == str(context.exception))
+        self.assertTrue("width must be > 0" == str(context.exception))
 
     def test_for_invalid_size_type(self):
         """Test for validity of size type check"""

@@ -28,7 +28,7 @@ class TestRectangleClass(unittest.TestCase):
         """Test for validity of width value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(-1, 2)
-        self.assertTrue("width must be >= 0" == str(context.exception))
+        self.assertTrue("width must be > 0" == str(context.exception))
 
     def test_for_invalid_width_type(self):
         """Test for validity of width type check"""
@@ -40,7 +40,7 @@ class TestRectangleClass(unittest.TestCase):
         """Test for validity of height value check"""
         with self.assertRaises(Exception) as context:
             r = Rectangle(1, -2)
-        self.assertTrue("height must be >= 0" == str(context.exception))
+        self.assertTrue("height must be > 0" == str(context.exception))
 
     def test_for_invalid_height_type(self):
         """Test for validity of height type check"""
