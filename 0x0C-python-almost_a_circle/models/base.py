@@ -44,10 +44,10 @@ class Base:
                 sqrs.append(item.to_dictionary())
         if len(rects) > 0:
             with open("Rectangle.json", "w+") as f:
-                f.write(cls.to_json_string(rects))
+                f.write([cls.to_json_string(rects)])
         if len(sqrs) > 0:
             with open("Square.json", "w+") as f:
-                f.write(cls.to_json_string(sqrs))
+                f.write([cls.to_json_string(sqrs)])
 
     @staticmethod
     def from_json_string(json_string):
