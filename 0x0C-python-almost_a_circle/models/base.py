@@ -52,7 +52,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns an object represented by a JSON string"""
-        if list_objs is None or len(list_objs) <= 0:
+        if json_string is None or json_string == "":
             return []
         io = StringIO(json_string)
         return json.load(io)
