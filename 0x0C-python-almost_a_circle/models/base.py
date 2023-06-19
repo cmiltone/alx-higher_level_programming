@@ -5,7 +5,7 @@ module for base class
 import json
 from io import StringIO
 import csv
-# import turtle
+import turtle
 
 
 class Base:
@@ -52,6 +52,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns an object represented by a JSON string"""
+        if list_objs is None or len(list_objs) <= 0:
+            return []
         io = StringIO(json_string)
         return json.load(io)
 
@@ -117,8 +119,8 @@ class Base:
         except IOError:
             return []
 
-    # @staticmethod
-    # def draw(list_rectangles, list_squares):
+    @staticmethod
+    def draw(list_rectangles, list_squares):
         """ draws the shapes"""
         t = turtle.Turtle()
         t.screen.bgcolor("#02bbee")
