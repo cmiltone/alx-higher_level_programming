@@ -1,4 +1,4 @@
--- script shows full of 'first_table' table description for a database passed via command line
+-- script creates 'first_table' table in a database passed via command line
 DROP TABLE IF EXISTS first_table;
 CREATE TABLE first_table (
   id INTEGER,
