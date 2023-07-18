@@ -1,6 +1,6 @@
 -- script creates table 'second_table'
-DROP TABLE IF EXISTS second_table;
-CREATE TABLE second_table (
+DROP TABLE IF EXISTS `second_table`;
+CREATE TABLE `second_table` (
   id INTEGER,
   name VARCHAR(256),
   score INTEGER
