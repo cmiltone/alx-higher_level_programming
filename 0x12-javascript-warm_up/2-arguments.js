@@ -1,4 +1,4 @@
-#!/bin/node
+#!/usr/bin/node
 const { argv } = process;
 const args = argv.filter((_, i) => i > 1);
 
