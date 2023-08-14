@@ -1,6 +1,6 @@
 #!/bin/node
 const { argv } = process;
-const args = argv.splice(0, 2);
+const args = argv.filter((_, i) => i > 1);
 
 if (args.length) {
   console.log(args.join(''));
