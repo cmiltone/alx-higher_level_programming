@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const { argv, argv0 } = process;
+const { argv } = process;
 const args = argv.filter((_, i) => i > 1);
 
 if (!args[0]) {
