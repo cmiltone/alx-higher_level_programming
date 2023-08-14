@@ -1,9 +1,9 @@
 #!/usr/bin/node
-const { argv } = process;
+const { argv, argv0 } = process;
 const args = argv.filter((_, i) => i > 1);
 
-if (args.length <= 0) {
+if (!args[0]) {
   console.log('No argument');
-} else if (args.length >= 1) {
+} else if (args[0]) {
   console.log(args[0]);
 }
