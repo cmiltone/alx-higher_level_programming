@@ -12,4 +12,3 @@ contents += '\n';
 contents += fs.readFileSync(file2);
 
 fs.writeFileSync(file3, contents);
-
