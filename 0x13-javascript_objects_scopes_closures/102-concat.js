@@ -8,7 +8,6 @@ const file3 = argv[4];
 let contents = '';
 
 contents += fs.readFileSync(file1);
-contents += '\n';
 contents += fs.readFileSync(file2);
 
 fs.writeFileSync(file3, contents);
