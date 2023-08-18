@@ -5,3 +5,7 @@ lib64
 pyvenv.cfg
 include
 4-cities_by_state.sql
+__pycache__
+6-model_state.sql
+6-model_state.py
+
