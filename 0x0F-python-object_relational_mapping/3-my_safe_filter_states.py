@@ -21,12 +21,11 @@ if __name__ == "__main__":
                         FROM
                             states
                         WHERE
-                            name LIKE '%(name)'\
+                            name LIKE %(name)s\
                         ORDER BY id ASC
                     """, {
                         'name': name
-                    }
-            )
+                        })
             rows = cur.fetchall()
             for row in rows:
                 print("{}".format(row))
