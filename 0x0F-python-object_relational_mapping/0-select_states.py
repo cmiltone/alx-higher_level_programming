@@ -11,7 +11,7 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
 
     try:
-        conn = MySQLdb.connect("127.0.0.1", username, password, dbname)
+        conn = MySQLdb.connect("localhost", username, password, dbname)
         cur = conn.cursor()
         cur.execute("SELECT id, name FROM states ORDER BY id ASC")
         rows = cur.fetchall()
