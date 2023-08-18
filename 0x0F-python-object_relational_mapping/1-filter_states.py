@@ -13,7 +13,7 @@ if __name__ == "__main__":
     try:
         conn = MySQLdb.connect("localhost", username, password, dbname)
         cur = conn.cursor()
-        sql = "SELECT id, name FROM states WHERE UPPER(name) LIKE 'N%'\
+        sql = "SELECT id, name FROM states WHERE name LIKE 'N%'\
         ORDER BY id ASC"
         cur.execute(sql)
         rows = cur.fetchall()
