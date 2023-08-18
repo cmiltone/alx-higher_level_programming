@@ -13,13 +13,23 @@ if __name__ == "__main__":
 
     try:
         conn = MySQLdb.connect("localhost", username, password, dbname)
-        cur = conn.cursor()
-        sql = "SELECT id, name FROM states WHERE name LIKE '%{}%'\
-        ORDER BY id ASC".format(name)
-        cur.execute(sql)
-        rows = cur.fetchall()
-        for row in rows:
-            print("{}".format(row))
+        with conn.cursor() as cur:
+            cur.execute("""
+                        SELECT
+                            id,
+                            name
+                        FROM
+                            states
+                        WHERE
+                            name LIKE '%(name)'\
+                        ORDER BY id ASC
+                    """, {
+                        'name': name
+                    }
+            )
+            rows = cur.fetchall()
+            for row in rows:
+                print("{}".format(row))
     except Exception as e:
         print("Something went wrong... ")
         print(e)

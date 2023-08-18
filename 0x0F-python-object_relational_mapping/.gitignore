@@ -1,1 +1,6 @@
 0-select_states.sql
+bin
+lib
+lib64
+pyvenv.cfg
+include
