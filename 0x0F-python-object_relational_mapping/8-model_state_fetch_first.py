@@ -16,6 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engn)
     sessn = Session()
     state = sessn.query(State).order_by(State.id).first()
-    print('{}: {}'.format(state.id, state.name))
+    if not state:
+        print('Nothing')
+    else:
+        print('{}: {}'.format(state.id, state.name))
 
     sessn.close()
