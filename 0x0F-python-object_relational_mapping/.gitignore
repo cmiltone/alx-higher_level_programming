@@ -8,4 +8,4 @@ include
 __pycache__
 6-model_state.sql
 6-model_state.py
-
+7-model_state_fetch_all.sql
