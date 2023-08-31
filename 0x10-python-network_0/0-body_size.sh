@@ -1,3 +1,4 @@
+ #!/bin/bash
 # script prints size of body of response in bytes
 for arg in "$@"
 do
