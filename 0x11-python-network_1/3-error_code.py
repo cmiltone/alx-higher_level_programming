@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-module fetches from
-https://alx-intranet.hbtn.io/status
+module sends a request to the URL and
+displays the body of the response
+also handles errors by displaying the
+error code
 """
 
 
