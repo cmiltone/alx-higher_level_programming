@@ -14,10 +14,10 @@ const getName = (charUrl) => {
       }
 
       const character = JSON.parse(bdy);
-      resolve(character.name)
+      resolve(character.name);
     });
-  })
-}
+  });
+};
 
 req(url, async function (error, response, body) {
   if (error) {
