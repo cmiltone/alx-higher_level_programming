@@ -1,9 +1,9 @@
 #!/usr/bin/node
-// script 
-const fs = require("fs")
+// script to print file contents
+const fs = require('fs');
 
-const filename = process.argv[2]
+const filename = process.argv[2];
 
-const content = fs.readFileSync(filename, "utf8")
+const content = fs.readFileSync(filename, 'utf8');
 
 console.log(content);
