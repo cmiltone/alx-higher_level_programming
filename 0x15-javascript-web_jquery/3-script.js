@@ -1,3 +1,5 @@
-$('div#red_header').on('click', () => {
-  $("header").addClass('red');
-})
+$('document').ready(function () {
+  $('div#red_header').on('click', () => {
+    $('header').addClass('red');
+  });
+});

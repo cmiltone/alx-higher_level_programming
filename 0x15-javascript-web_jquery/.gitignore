@@ -12,3 +12,6 @@
 101-main.html
 102-main.html
 103-main.html
+node_modules
+package.json
+package-lock.json
